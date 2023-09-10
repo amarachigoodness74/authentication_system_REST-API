@@ -1,4 +1,0 @@
-GET http://localhost:1337/api/users HTTP/1.1
-content-type: application/json
-Authorization: token eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImVtYWlsIjoiYW1hcmFjaGlnb29kbmVzczc0QGdtYWlsLmNvbSIsImlzUmVmcmVzaFRva2VuIjpmYWxzZX0sImlhdCI6MTY5NDM1NjkwOCwiZXhwIjoxNjk0MzU2OTY4fQ.-205b66wh1ztTPqYiznz5_ngLRpnkkQoPxcipMnnUw8
-

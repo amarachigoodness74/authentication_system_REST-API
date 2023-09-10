@@ -22,8 +22,7 @@ const sessionSecret = config.get('session.secret') as string;
 
 const app: Express = express();
 
-// app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(compression());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
