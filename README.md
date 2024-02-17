@@ -1,26 +1,26 @@
 # Authentication System API
 
 ## Description
-Authentication System API is an authentication REST API that takes care of signup, signin, update account, forgot password, reset password, refresh token, get users, get user, delete user.
+Authentication System API is an authentication REST API that takes care of signup, signin, update account, forgot password, reset password, refresh token, get users, get user, and delete user.
 
 ## Installation
 Clone the repository and cd into the project directory  
 Run `npm install` or `yarn install` to install all project dependencies  
 Create .env file and add your database details - Check `.env.example` file  
-Run `npm run develop` or `yarn develop` to start local server which will run on localhost:1337  
+Run `npm run develop` or `yarn develop` to start the local server which will run on localhost:1337  
 
 ## Usage
 ### API Endpoints
-- POST `/api/auth/login` to login into your account with access token and create your session 
-- POST `/api/auth/forgot-password` to request link to change password
-- PUT `/api/auth/reset-password` to update account password 
-- PUT `/api/auth/refresh-token` to get new access token every 10minutes to keep user authenticated if session is still active 
+- POST `/api/auth/login` to log in to your account with an access token and create your session 
+- POST `/api/auth/forgot-password` to request a link to change the password
+- PUT `/api/auth/reset-password` to update the account password 
+- PUT `/api/auth/refresh-token` to get a new access token every 10 minutes to keep the user authenticated if the session is still active 
 - GET `/api/auth/logout` to logout of your account and destroy your session
 - POST `/api/users` to create user's account
 - GET `/api/users` to get all users
 - GET `/api/users/:userId` to get a user's data by id
 - PUT `/api/users/:userId` to update a user's data by id
-- DELETE `/api/users/:userId` to delete user's account by id
+- DELETE `/api/users/:userId` to delete the user's account by id
 
 ## Built With
 Node/Express - The web framework used  
