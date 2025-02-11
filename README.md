@@ -8,6 +8,7 @@ Clone the repository and cd into the project directory
 Run `npm install` or `yarn install` to install all project dependencies  
 Create .env file and add your database details - Check `.env.example` file  
 Run `npm run develop` or `yarn develop` to start the local server which will run on localhost:1337  
+Run `npm test` or `yarn test` to run test cases   
 
 ## Usage
 ### API Endpoints
