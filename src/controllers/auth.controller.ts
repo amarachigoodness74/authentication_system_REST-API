@@ -110,7 +110,9 @@ export const resetPasswordController = async (
     }
     return next(new (CustomException as any)(500, 'Operation unsuccessful'));
   } catch (error: any) {
-    logger.error(`resetPasswordController AuthController Error: ${error.message}`);
+    logger.error(
+      `resetPasswordController AuthController Error: ${error.message}`
+    );
     return next(new (CustomException as any)(500, 'Operation unsuccessful'));
   }
 };

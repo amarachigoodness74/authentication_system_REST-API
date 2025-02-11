@@ -4,7 +4,7 @@ import createError from 'http-errors';
 import compression from 'compression';
 import cors from 'cors';
 import config from 'config';
-import dotenv from "dotenv-safe";
+import dotenv from 'dotenv-safe';
 import authRoute from './routes/auth.route';
 import userRoute from './routes/user.route';
 import { connectDB, logger, corsOptions, store } from './utils';
@@ -45,7 +45,7 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
   res.send({ message: 'Welcome 🐻' });
 });
 
-app.get("/healthcheck", (req: Request, res: Response) => res.sendStatus(200));
+app.get('/healthcheck', (req: Request, res: Response) => res.sendStatus(200));
 
 app.use('/auth', authRoute);
 app.use('/api/users', userRoute);
@@ -63,7 +63,11 @@ app.use((err: any, req: Request, res: Response, next: NextFunction) =>
   })
 );
 
-app.listen(port, () => {
-  logger.info(`Server running on ${port}`);
-  connectDB();
-});
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(port, async () => {
+    await connectDB();
+    logger.info(`Server running on ${port}`);
+  });
+}
+
+export default app;

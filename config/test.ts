@@ -7,7 +7,7 @@ export default {
     port: Number(String(process.env.PORT)) || 1337,
   },
   dbConfig: {
-    url: process.env.DBURL || '',
+    url: process.env.TEST_DB_URL || '',
     saltWorkFactor: Number(String(process.env.SALTWORKFACTOR)) || 10,
   },
   session: {

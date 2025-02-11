@@ -6,10 +6,7 @@ import { logger } from '../utils';
 import { CustomException } from '../utils/errors';
 import { IUser, IUserRefreshToken } from '../interfaces/user.interface';
 
-export const createUser = async (
-  data: UserDocument,
-  next: NextFunction
-) => {
+export const createUser = async (data: UserDocument, next: NextFunction) => {
   try {
     const user = await UserModel.create(data);
     return omit(user.toJSON(), 'password');
@@ -77,7 +74,10 @@ export const updatePassword = async (
     const user = await findUserByEmail(email, next);
     if (user) {
       const hashedPassword = await user.hashPassword(password);
-      const updatedUser = await UserModel.updateOne({ email: email }, { password: hashedPassword })
+      const updatedUser = await UserModel.updateOne(
+        { email: email },
+        { password: hashedPassword }
+      );
       if (updatedUser) {
         return true;
       }
@@ -109,7 +109,11 @@ export const findUserById = async (id: string, next: NextFunction) => {
   }
 };
 
-export const updateUser = async (id: string, data: IUser | IUserRefreshToken, next: NextFunction) => {
+export const updateUser = async (
+  id: string,
+  data: IUser | IUserRefreshToken,
+  next: NextFunction
+) => {
   try {
     const user = await findUserById(id, next);
     if (user) {
